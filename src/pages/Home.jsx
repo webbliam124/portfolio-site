@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import SEO from '../components/SEO';
+import { localBusinessSchema, generateBreadcrumbSchema, combineSchemas } from '../data/schema';
 import './Home.css';
 
 const features = [
@@ -19,8 +21,30 @@ const projects = [
 ];
 
 export default function Home() {
+  const homeSchema = combineSchemas(
+    localBusinessSchema,
+    generateBreadcrumbSchema([{ name: 'Home', url: '/' }])
+  );
+
   return (
     <main className="home">
+      <SEO
+        title="Expert Upholstery & Custom Blinds in Krugersdorp"
+        description="A&K Upholstery & Blinds - Professional furniture reupholstery and custom blinds manufactured in-house. Expert craftsmanship serving all of South Africa from our Krugersdorp workshop. Get a free quote today."
+        keywords={[
+          'upholstery krugersdorp',
+          'blinds south africa',
+          'furniture reupholstery',
+          'custom blinds krugersdorp',
+          'sofa reupholstery',
+          'blind repairs',
+          'vertical blinds south africa',
+          'furniture restoration krugersdorp',
+        ]}
+        path="/"
+        schema={homeSchema}
+      />
+
       {/* Hero Section */}
       <section className="hero">
         <div className="hero__bg">

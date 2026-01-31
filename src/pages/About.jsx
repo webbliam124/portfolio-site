@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import SEO from '../components/SEO';
+import { localBusinessSchema, generateBreadcrumbSchema, combineSchemas } from '../data/schema';
 import './About.css';
 
 const values = [
@@ -10,8 +12,30 @@ const values = [
 ];
 
 export default function About() {
+  const aboutSchema = combineSchemas(
+    localBusinessSchema,
+    generateBreadcrumbSchema([
+      { name: 'Home', url: '/' },
+      { name: 'About Us', url: '/about' },
+    ])
+  );
+
   return (
     <main className="about-page">
+      <SEO
+        title="About A&K | Krugersdorp Upholstery & Blinds Workshop"
+        description="Learn about A&K Upholstery & Blinds - founded by William Webb in Krugersdorp. Meet our skilled team of craftspeople and discover why we're trusted across South Africa for quality upholstery and blinds."
+        keywords={[
+          'about a&k upholstery',
+          'krugersdorp workshop',
+          'upholstery team south africa',
+          'furniture craftsmen krugersdorp',
+          'blinds manufacturer gauteng',
+        ]}
+        path="/about"
+        schema={aboutSchema}
+      />
+
       {/* Breadcrumb */}
       <div className="breadcrumb">
         <div className="breadcrumb__container">

@@ -1,7 +1,100 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { upholsteryServices, blindsServices } from '../data/services';
+import SEO from '../components/SEO';
+import {
+  generateServiceSchema,
+  generateFAQSchema,
+  generateBreadcrumbSchema,
+  combineSchemas,
+} from '../data/schema';
 import './ServiceDetail.css';
+
+// SEO content for each service
+const seoContent = {
+  // Upholstery services
+  'furniture-reupholstery': {
+    title: 'Furniture Reupholstery Krugersdorp | Sofa & Chair Reupholstery SA',
+    description: 'Professional furniture reupholstery in Krugersdorp. Expert sofa, chair, and antique reupholstery services. Thousands of fabric options. All work done in-house. Free quotes.',
+    keywords: ['furniture reupholstery krugersdorp', 'sofa reupholstery south africa', 'chair reupholstery gauteng', 'antique furniture restoration'],
+  },
+  'recliner-servicing': {
+    title: 'Recliner Repairs & Servicing Krugersdorp | Electric Recliner Repairs',
+    description: 'Expert recliner repairs and servicing in Krugersdorp. Electric, manual, and lift chair repairs. Mechanism replacement, motor repairs, and reupholstery. Free quotes.',
+    keywords: ['recliner repairs krugersdorp', 'electric recliner repairs south africa', 'recliner mechanism replacement', 'lift chair servicing'],
+  },
+  'lounge-suite-alterations': {
+    title: 'Lounge Suite Alterations Krugersdorp | Sofa Resizing & Reshaping',
+    description: 'Professional lounge suite alterations in Krugersdorp. Resize, reshape, or reconfigure your sofa to fit your space. Expert craftsmanship. Free quotes.',
+    keywords: ['lounge suite alterations krugersdorp', 'sofa resizing south africa', 'couch modifications gauteng', 'furniture alterations'],
+  },
+  'bed-boxes-headboards': {
+    title: 'Custom Bed Boxes & Headboards Krugersdorp | Upholstered Beds SA',
+    description: 'Custom upholstered bed boxes and headboards manufactured in Krugersdorp. Any size, storage options available. Matching bedroom furniture. Free quotes.',
+    keywords: ['custom headboards krugersdorp', 'upholstered bed bases south africa', 'bed boxes gauteng', 'custom beds krugersdorp'],
+  },
+  'furniture-repairs': {
+    title: 'Furniture Repairs Krugersdorp | Frame Repairs & Restoration',
+    description: 'Professional furniture repairs in Krugersdorp. Frame repairs, joint repairs, and antique restoration. Extend your furniture\'s lifespan. Free quotes.',
+    keywords: ['furniture repairs krugersdorp', 'furniture frame repairs south africa', 'antique furniture restoration gauteng', 'chair repairs'],
+  },
+  'leather-repairs': {
+    title: 'Leather Furniture Repairs Krugersdorp | Leather Restoration SA',
+    description: 'Specialist leather furniture repairs in Krugersdorp. Crack repairs, colour restoration, reconditioning, and scratch removal. Free quotes.',
+    keywords: ['leather repairs krugersdorp', 'leather furniture restoration south africa', 'leather colour restoration', 'leather couch repairs'],
+  },
+  'dining-chairs': {
+    title: 'Dining Chair Reupholstery Krugersdorp | Chair Set Restoration SA',
+    description: 'Expert dining chair reupholstery in Krugersdorp. Set matching, volume pricing for large sets. Quick turnaround. All styles catered for. Free quotes.',
+    keywords: ['dining chair reupholstery krugersdorp', 'chair restoration south africa', 'dining set reupholstery gauteng', 'antique chair restoration'],
+  },
+  'office-chairs': {
+    title: 'Office Chair Repairs Krugersdorp | Commercial Chair Servicing SA',
+    description: 'Professional office chair repairs and reupholstery in Krugersdorp. Commercial contracts available. All chair types serviced. Free quotes.',
+    keywords: ['office chair repairs krugersdorp', 'commercial chair servicing south africa', 'office chair reupholstery gauteng', 'ergonomic chair repairs'],
+  },
+  // Blinds services
+  'vertical-blinds': {
+    title: 'Vertical Blinds Krugersdorp | Custom Vertical Blinds South Africa',
+    description: 'Custom vertical blinds manufactured in Krugersdorp. Fabric, PVC, and aluminium options. Wide widths up to 5m. Professional installation. Free quotes.',
+    keywords: ['vertical blinds krugersdorp', 'custom vertical blinds south africa', 'office blinds gauteng', 'sliding door blinds'],
+  },
+  'venetian-blinds': {
+    title: 'Venetian Blinds Krugersdorp | Aluminium Blinds South Africa',
+    description: 'Quality aluminium venetian blinds manufactured in Krugersdorp. 25mm and 50mm slats. Wide colour range. Motorisation available. Free quotes.',
+    keywords: ['venetian blinds krugersdorp', 'aluminium blinds south africa', 'metal blinds gauteng', 'office venetian blinds'],
+  },
+  'wooden-blinds': {
+    title: 'Wooden Blinds Krugersdorp | Real Wood & Faux Wood Blinds SA',
+    description: 'Natural wooden blinds and faux wood blinds in Krugersdorp. Real bass wood and moisture-resistant options. Beautiful finishes. Free quotes.',
+    keywords: ['wooden blinds krugersdorp', 'wood blinds south africa', 'faux wood blinds gauteng', 'bass wood blinds'],
+  },
+  'roller-blinds': {
+    title: 'Roller Blinds Krugersdorp | Blockout & Sunscreen Blinds SA',
+    description: 'Custom roller blinds manufactured in Krugersdorp. Blockout, translucent, and sunscreen fabrics. Motorisation available. Free quotes.',
+    keywords: ['roller blinds krugersdorp', 'blockout blinds south africa', 'sunscreen blinds gauteng', 'motorised roller blinds'],
+  },
+  'patio-blinds': {
+    title: 'Patio Blinds Krugersdorp | Outdoor Patio Blinds South Africa',
+    description: 'Durable patio blinds for outdoor entertainment areas in Krugersdorp. PVC clear, canvas, and mesh options. Weather protection. Free quotes.',
+    keywords: ['patio blinds krugersdorp', 'outdoor blinds south africa', 'clear pvc blinds gauteng', 'weather blinds'],
+  },
+  'outdoor-blinds': {
+    title: 'Outdoor Blinds Krugersdorp | Commercial Outdoor Blinds SA',
+    description: 'Heavy-duty outdoor blinds for commercial and residential applications in Krugersdorp. Weather-resistant materials. Professional installation. Free quotes.',
+    keywords: ['outdoor blinds krugersdorp', 'commercial outdoor blinds south africa', 'industrial blinds gauteng', 'restaurant blinds'],
+  },
+  'repairs-servicing': {
+    title: 'Blind Repairs Krugersdorp | All Brands Serviced South Africa',
+    description: 'Expert blind repairs and servicing in Krugersdorp. All blind types and brands repaired. Cord replacement, mechanism repairs, motor repairs. Free quotes.',
+    keywords: ['blind repairs krugersdorp', 'blind servicing south africa', 'venetian blind repairs gauteng', 'roller blind repairs'],
+  },
+  'spare-parts': {
+    title: 'Blind Spare Parts Krugersdorp | Blinds Components South Africa',
+    description: 'Extensive range of blind spare parts and components in Krugersdorp. Chains, cords, slats, brackets, motors. Trade and public welcome. Nationwide delivery.',
+    keywords: ['blind spare parts krugersdorp', 'blinds components south africa', 'vertical blind parts gauteng', 'venetian blind spares'],
+  },
+};
 
 export default function ServiceDetail({ type }) {
   const { serviceId } = useParams();
@@ -11,6 +104,12 @@ export default function ServiceDetail({ type }) {
   if (!service) {
     return (
       <main className="service-detail">
+        <SEO
+          title="Service Not Found"
+          description="The requested service could not be found."
+          path={`/${type}/${serviceId}`}
+          noIndex={true}
+        />
         <div className="service-detail__not-found">
           <h1>Service Not Found</h1>
           <Link to={`/${type}`} className="btn btn--primary">View All {type === 'upholstery' ? 'Upholstery' : 'Blinds'} Services</Link>
@@ -20,9 +119,32 @@ export default function ServiceDetail({ type }) {
   }
 
   const relatedServices = services.filter(s => s.id !== serviceId).slice(0, 3);
+  const seo = seoContent[serviceId] || {
+    title: `${service.name} | A&K Krugersdorp`,
+    description: service.shortDesc,
+    keywords: [],
+  };
+
+  const serviceDetailSchema = combineSchemas(
+    generateServiceSchema(service, type),
+    generateFAQSchema(service.faqs),
+    generateBreadcrumbSchema([
+      { name: 'Home', url: '/' },
+      { name: type === 'upholstery' ? 'Upholstery' : 'Blinds', url: `/${type}` },
+      { name: service.name, url: `/${type}/${serviceId}` },
+    ])
+  );
 
   return (
     <main className="service-detail">
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        path={`/${type}/${serviceId}`}
+        schema={serviceDetailSchema}
+      />
+
       {/* Breadcrumb */}
       <div className="breadcrumb">
         <div className="breadcrumb__container">

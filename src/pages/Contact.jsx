@@ -1,8 +1,18 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
+import SEO from '../components/SEO';
+import { localBusinessSchema, generateBreadcrumbSchema, combineSchemas } from '../data/schema';
 import './Contact.css';
 
 const WEB3FORMS_KEY = 'bb34cb2d-db3f-4b5f-a31d-2a736380d188';
+
+const contactSchema = combineSchemas(
+  localBusinessSchema,
+  generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Contact', url: '/contact' },
+  ])
+);
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -75,6 +85,20 @@ export default function Contact() {
 
   return (
     <main className="contact-page">
+      <SEO
+        title="Contact A&K | Free Quote Krugersdorp"
+        description="Contact A&K Upholstery & Blinds for a free quote. Visit our Krugersdorp showroom, call 011 955 4085, or send us an enquiry. Mon-Fri 08:00-16:00. Walk-ins welcome."
+        keywords={[
+          'contact a&k blinds',
+          'free quote upholstery krugersdorp',
+          'blinds quote south africa',
+          'upholstery krugersdorp contact',
+          'furniture reupholstery quote',
+        ]}
+        path="/contact"
+        schema={contactSchema}
+      />
+
       {/* Breadcrumb */}
       <div className="breadcrumb">
         <div className="breadcrumb__container">

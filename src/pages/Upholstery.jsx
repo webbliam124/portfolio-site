@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { upholsteryServices } from '../data/services';
+import SEO from '../components/SEO';
+import { localBusinessSchema, generateBreadcrumbSchema, combineSchemas } from '../data/schema';
 import './Services.css';
 
 const processSteps = [
@@ -12,8 +14,33 @@ const processSteps = [
 ];
 
 export default function Upholstery() {
+  const upholsterySchema = combineSchemas(
+    localBusinessSchema,
+    generateBreadcrumbSchema([
+      { name: 'Home', url: '/' },
+      { name: 'Upholstery', url: '/upholstery' },
+    ])
+  );
+
   return (
     <main className="services-page">
+      <SEO
+        title="Professional Upholstery Services Krugersdorp"
+        description="Expert furniture reupholstery services in Krugersdorp. Sofa reupholstery, recliner repairs, lounge suite alterations, leather repairs, and more. All work done in-house. Free quotes available."
+        keywords={[
+          'furniture upholstery krugersdorp',
+          'sofa reupholstery south africa',
+          'furniture reupholstery gauteng',
+          'recliner repairs krugersdorp',
+          'lounge suite alterations',
+          'leather furniture repairs',
+          'dining chair reupholstery',
+          'office chair repairs',
+        ]}
+        path="/upholstery"
+        schema={upholsterySchema}
+      />
+
       {/* Breadcrumb */}
       <div className="breadcrumb">
         <div className="breadcrumb__container">

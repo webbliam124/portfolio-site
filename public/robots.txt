@@ -1,0 +1,11 @@
+# A&K Upholstery & Blinds - robots.txt
+# https://aandkblinds.co.za
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aandkblinds.co.za/sitemap.xml
+
+# Crawl-delay (optional, respected by some crawlers)
+Crawl-delay: 1

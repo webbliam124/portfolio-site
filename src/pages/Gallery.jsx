@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
+import SEO from '../components/SEO';
+import { generateBreadcrumbSchema } from '../data/schema';
 import './Gallery.css';
 
 const galleryItems = [
@@ -32,8 +34,27 @@ export default function Gallery() {
     ? galleryItems
     : galleryItems.filter(item => item.category === filter);
 
+  const gallerySchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Gallery', url: '/gallery' },
+  ]);
+
   return (
     <main className="gallery-page">
+      <SEO
+        title="Upholstery & Blinds Portfolio"
+        description="Browse our portfolio of completed upholstery and blinds projects. See examples of furniture reupholstery, sofa restorations, custom blinds installations, and more from A&K Krugersdorp."
+        keywords={[
+          'upholstery portfolio',
+          'furniture restoration examples',
+          'blinds installation gallery',
+          'sofa reupholstery before after',
+          'krugersdorp upholstery work',
+        ]}
+        path="/gallery"
+        schema={gallerySchema}
+      />
+
       {/* Breadcrumb */}
       <div className="breadcrumb">
         <div className="breadcrumb__container">

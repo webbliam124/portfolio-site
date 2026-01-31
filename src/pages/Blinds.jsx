@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { blindsServices } from '../data/services';
+import SEO from '../components/SEO';
+import { localBusinessSchema, generateBreadcrumbSchema, combineSchemas } from '../data/schema';
 import './Services.css';
 
 const whyChoose = [
@@ -12,8 +14,34 @@ const whyChoose = [
 ];
 
 export default function Blinds() {
+  const blindsSchema = combineSchemas(
+    localBusinessSchema,
+    generateBreadcrumbSchema([
+      { name: 'Home', url: '/' },
+      { name: 'Blinds', url: '/blinds' },
+    ])
+  );
+
   return (
     <main className="services-page">
+      <SEO
+        title="Custom Blinds Krugersdorp | Blinds Manufacturer South Africa"
+        description="Custom blinds manufactured in-house in Krugersdorp. Vertical blinds, venetian blinds, wooden blinds, roller blinds, patio and outdoor blinds. Professional installation and repairs. Free quotes."
+        keywords={[
+          'custom blinds krugersdorp',
+          'blinds manufacturer south africa',
+          'vertical blinds gauteng',
+          'venetian blinds krugersdorp',
+          'wooden blinds south africa',
+          'roller blinds johannesburg',
+          'patio blinds',
+          'outdoor blinds south africa',
+          'blind repairs krugersdorp',
+        ]}
+        path="/blinds"
+        schema={blindsSchema}
+      />
+
       {/* Breadcrumb */}
       <div className="breadcrumb">
         <div className="breadcrumb__container">
