@@ -2,6 +2,10 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import './Contact.css';
 
+// Get your free access key at https://web3forms.com
+// Enter: sales@aandkblinds.co.za to receive form submissions
+const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE'; // TODO: Replace with real key
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -12,21 +16,63 @@ export default function Contact() {
   });
   const [file, setFile] = useState(null);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+    const selectedFile = e.target.files[0];
+    // Limit file size to 5MB
+    if (selectedFile && selectedFile.size > 5 * 1024 * 1024) {
+      setError('File size must be less than 5MB');
+      return;
+    }
+    setFile(selectedFile);
+    setError(null);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', { ...formData, file });
-    setSubmitted(true);
-    setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-    setFile(null);
+    setLoading(true);
+    setError(null);
+
+    try {
+      const data = new FormData();
+      data.append('access_key', WEB3FORMS_KEY);
+      data.append('subject', `New Enquiry: ${formData.service} - ${formData.name}`);
+      data.append('from_name', 'A&K Website');
+      data.append('name', formData.name);
+      data.append('email', formData.email);
+      data.append('phone', formData.phone);
+      data.append('service', formData.service);
+      data.append('message', formData.message);
+
+      if (file) {
+        data.append('attachment', file);
+      }
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+        setFile(null);
+      } else {
+        setError(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setError('Failed to send. Please try again or contact us directly.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -142,6 +188,12 @@ export default function Contact() {
               <form className="contact-form" onSubmit={handleSubmit}>
                 <h2>Send an Enquiry</h2>
 
+                {error && (
+                  <div className="contact-form__error">
+                    {error}
+                  </div>
+                )}
+
                 <div className="contact-form__group">
                   <label htmlFor="name">Full Name *</label>
                   <input
@@ -151,6 +203,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    disabled={loading}
                   />
                 </div>
 
@@ -164,6 +217,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
+                      disabled={loading}
                     />
                   </div>
 
@@ -176,6 +230,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleChange}
                       required
+                      disabled={loading}
                     />
                   </div>
                 </div>
@@ -188,12 +243,13 @@ export default function Contact() {
                     value={formData.service}
                     onChange={handleChange}
                     required
+                    disabled={loading}
                   >
                     <option value="">Select a service...</option>
-                    <option value="upholstery">Upholstery</option>
-                    <option value="blinds">Blinds</option>
-                    <option value="both">Both</option>
-                    <option value="other">Other</option>
+                    <option value="Upholstery">Upholstery</option>
+                    <option value="Blinds">Blinds</option>
+                    <option value="Both">Both</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
 
@@ -207,24 +263,33 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Tell us about your project..."
                     required
+                    disabled={loading}
                   ></textarea>
                 </div>
 
                 <div className="contact-form__group">
-                  <label htmlFor="file">Attach Photos (optional)</label>
+                  <label htmlFor="attachment">Attach Photos (optional, max 5MB)</label>
                   <input
                     type="file"
-                    id="file"
-                    name="file"
+                    id="attachment"
+                    name="attachment"
                     onChange={handleFileChange}
                     accept="image/*"
                     className="contact-form__file"
+                    disabled={loading}
                   />
+                  {file && (
+                    <p className="contact-form__file-name">Selected: {file.name}</p>
+                  )}
                   <p className="contact-form__hint">Upload photos of your furniture or windows for a more accurate quote.</p>
                 </div>
 
-                <button type="submit" className="btn btn--primary btn--lg btn--full">
-                  Send Enquiry
+                <button
+                  type="submit"
+                  className="btn btn--primary btn--lg btn--full"
+                  disabled={loading}
+                >
+                  {loading ? 'Sending...' : 'Send Enquiry'}
                 </button>
               </form>
             )}

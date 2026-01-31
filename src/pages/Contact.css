@@ -133,6 +133,35 @@
   margin-top: var(--space-xs);
 }
 
+.contact-form__file-name {
+  font-size: 0.875rem;
+  color: var(--color-crimson);
+  margin-top: var(--space-xs);
+  font-weight: 500;
+}
+
+.contact-form__error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 6px;
+  margin-bottom: var(--space-md);
+  font-size: 0.875rem;
+}
+
+.contact-form input:disabled,
+.contact-form select:disabled,
+.contact-form textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 /* Success State */
 .contact-page__success {
   text-align: center;
