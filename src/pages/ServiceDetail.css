@@ -9,6 +9,8 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-lg);
+  padding: var(--space-xl);
+  text-align: center;
 }
 
 /* Hero */
@@ -45,7 +47,7 @@
 }
 
 .service-detail__hero-content h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.75rem, 5vw, 3rem);
 }
 
 /* Content */
@@ -96,14 +98,16 @@
 
 .service-detail__benefits li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-sm);
   color: var(--color-grey-dark);
+  line-height: 1.5;
 }
 
 .service-detail__benefits svg {
   color: var(--color-crimson);
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 /* FAQ */
@@ -133,6 +137,7 @@
   justify-content: space-between;
   align-items: center;
   transition: background var(--transition-fast);
+  min-height: 56px;
 }
 
 .faq-item summary:hover {
@@ -143,6 +148,8 @@
   content: '+';
   font-size: 1.5rem;
   font-weight: 300;
+  flex-shrink: 0;
+  margin-left: var(--space-sm);
 }
 
 .faq-item[open] summary::after {
@@ -181,6 +188,7 @@
 
 .service-detail__cta-box .btn {
   margin-bottom: var(--space-sm);
+  width: 100%;
 }
 
 .service-detail__cta-box .btn:last-child {
@@ -207,6 +215,9 @@
 .service-detail__contact-info a {
   color: var(--color-grey-dark);
   transition: color var(--transition-fast);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .service-detail__contact-info a:hover {
@@ -260,6 +271,10 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .service-detail {
+    padding-top: 70px;
+  }
+
   .service-detail__container {
     grid-template-columns: 1fr;
   }
@@ -277,18 +292,80 @@
     flex: 1;
     min-width: 280px;
   }
+
+  .service-detail__related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
+  .service-detail {
+    padding-top: 64px;
+  }
+
   .service-detail__hero {
-    height: 300px;
+    height: 280px;
+  }
+
+  .service-detail__hero-content {
+    padding: var(--space-md);
+  }
+
+  .service-detail__content {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .service-detail__container {
+    gap: var(--space-lg);
+  }
+
+  .service-detail__benefits {
+    padding: var(--space-md);
+  }
+
+  .service-detail__benefits h2 {
+    font-size: 1.125rem;
+  }
+
+  .service-detail__faq h2 {
+    font-size: 1.25rem;
+  }
+
+  .faq-item summary {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.9375rem;
+  }
+
+  .faq-item p {
+    padding: 0 var(--space-md) var(--space-md);
+    font-size: 0.9375rem;
+  }
+
+  .service-detail__related {
+    padding: var(--space-lg) var(--space-sm);
   }
 
   .service-detail__related-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 
   .service-detail__sidebar {
     flex-direction: column;
+  }
+
+  .service-detail__cta-box,
+  .service-detail__contact-info {
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .service-detail__hero {
+    height: 240px;
+  }
+
+  .service-detail__description p {
+    font-size: 0.9375rem;
   }
 }

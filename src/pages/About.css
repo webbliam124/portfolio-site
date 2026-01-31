@@ -198,6 +198,10 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .about-page {
+    padding-top: 70px;
+  }
+
   .about-intro__container,
   .about-team__container,
   .about-showroom__container {
@@ -214,13 +218,75 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .about-page {
+    padding-top: 64px;
+  }
+
+  .about-intro {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .about-intro__content h1 {
+    margin-bottom: var(--space-md);
+  }
+
+  .about-team {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .about-values {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
   .about-values__grid {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .value-card {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  .value-card__icon {
+    font-size: 2rem;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .value-card h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .value-card p {
+    font-size: 0.875rem;
+  }
+
+  .about-showroom {
+    padding: var(--space-lg) var(--space-sm);
   }
 
   .about-showroom__details {
     flex-direction: column;
     gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  .about-cta {
+    padding: var(--space-xl) var(--space-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-intro__content p,
+  .about-team__content p,
+  .about-showroom__content > p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
   }
 }

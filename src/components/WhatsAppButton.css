@@ -20,6 +20,10 @@
   box-shadow: 0 6px 25px rgba(228, 0, 43, 0.5);
 }
 
+.whatsapp-btn:active {
+  transform: scale(0.95);
+}
+
 .whatsapp-btn svg {
   width: 32px;
   height: 32px;
@@ -36,5 +40,19 @@
   .whatsapp-btn svg {
     width: 28px;
     height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-btn {
+    bottom: var(--space-sm);
+    right: var(--space-sm);
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-btn svg {
+    width: 26px;
+    height: 26px;
   }
 }
