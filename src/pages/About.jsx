@@ -56,8 +56,8 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80"
-              alt="A&K Workshop"
+              src="/images/projects/project-01.jpg"
+              alt="A&K Craftsmanship"
             />
           </motion.div>
         </div>
@@ -74,8 +74,8 @@ export default function About() {
             viewport={{ once: true }}
           >
             <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
-              alt="Our Team"
+              src="/images/team-william.jpg"
+              alt="William Webb and team member at the A&K workshop"
             />
           </motion.div>
           <motion.div

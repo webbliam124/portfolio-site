@@ -181,8 +181,8 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <img
-              src="/images/fixing-chair.jpg"
-              alt="Our team at work"
+              src="/images/team-william.jpg"
+              alt="William Webb and team"
             />
           </motion.div>
           <motion.div

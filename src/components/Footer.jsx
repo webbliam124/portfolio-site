@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="footer__container">
         <div className="footer__grid">
           <div className="footer__col footer__col--about">
-            <img src="/logo.jpg" alt="A&K Upholstery & Blinds" className="footer__logo" />
+            <img src="/logo-white.png" alt="A&K Upholstery & Blinds" className="footer__logo" />
             <p>Expert upholstery services and custom blinds manufactured in-house. Quality craftsmanship you can trust.</p>
             <p className="footer__tagline">Proudly serving South Africa</p>
           </div>
