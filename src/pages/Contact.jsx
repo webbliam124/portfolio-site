@@ -53,7 +53,6 @@ export default function Contact() {
       data.append('subject', `New Enquiry: ${formData.service} - ${formData.name}`);
       data.append('from_name', 'A&K Website');
       data.append('replyto', formData.email);
-      data.append('ccemail', 'sales@aandkblinds.co.za');
       data.append('name', formData.name);
       data.append('email', formData.email);
       data.append('phone', formData.phone);
