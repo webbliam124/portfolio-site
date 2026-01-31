@@ -10,12 +10,12 @@ const features = [
 ];
 
 const projects = [
-  { id: 1, image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80', category: 'Upholstery' },
-  { id: 2, image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80', category: 'Blinds' },
-  { id: 3, image: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=600&q=80', category: 'Upholstery' },
-  { id: 4, image: 'https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=600&q=80', category: 'Blinds' },
-  { id: 5, image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80', category: 'Upholstery' },
-  { id: 6, image: 'https://images.unsplash.com/photo-1615873968403-89e068629265?w=600&q=80', category: 'Blinds' },
+  { id: 1, image: '/images/hands-upholstering-chair.jpg', category: 'Upholstery' },
+  { id: 2, image: '/images/installing-blinds.jpg', category: 'Blinds' },
+  { id: 3, image: '/images/leather-rolls-thread.jpg', category: 'Upholstery' },
+  { id: 4, image: '/images/installing-bracket.jpg', category: 'Blinds' },
+  { id: 5, image: '/images/fixing-chair.jpg', category: 'Upholstery' },
+  { id: 6, image: '/images/hands-screwing-detail.jpg', category: 'Upholstery' },
 ];
 
 export default function Home() {
@@ -24,10 +24,15 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero__bg">
-          <img
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80"
-            alt="Expert craftsmanship"
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/images/leather-rolls-thread.jpg"
+          >
+            <source src="/videos/sewing-machine.mp4" type="video/mp4" />
+          </video>
           <div className="hero__overlay"></div>
         </div>
         <div className="hero__content">
@@ -91,7 +96,7 @@ export default function Home() {
           >
             <div className="services-overview__image">
               <img
-                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"
+                src="/images/hands-upholstering-chair.jpg"
                 alt="Upholstery Services"
               />
             </div>
@@ -115,7 +120,7 @@ export default function Home() {
           >
             <div className="services-overview__image">
               <img
-                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80"
+                src="/images/installing-blinds.jpg"
                 alt="Blinds Division"
               />
             </div>
@@ -176,7 +181,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <img
-              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80"
+              src="/images/fixing-chair.jpg"
               alt="Our team at work"
             />
           </motion.div>

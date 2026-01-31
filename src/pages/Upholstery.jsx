@@ -26,10 +26,15 @@ export default function Upholstery() {
       {/* Hero */}
       <section className="services-hero">
         <div className="services-hero__bg">
-          <img
-            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1920&q=80"
-            alt="Professional upholstery services"
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/images/hands-upholstering-chair.jpg"
+          >
+            <source src="/videos/stapling-fabric.mp4" type="video/mp4" />
+          </video>
           <div className="services-hero__overlay"></div>
         </div>
         <div className="services-hero__content">

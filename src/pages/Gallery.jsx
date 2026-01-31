@@ -4,18 +4,13 @@ import { motion, AnimatePresence } from 'motion/react';
 import './Gallery.css';
 
 const galleryItems = [
-  { id: 1, image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80', category: 'Upholstery', title: 'Sofa Reupholstery' },
-  { id: 2, image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80', category: 'Blinds', title: 'Vertical Blinds Installation' },
-  { id: 3, image: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800&q=80', category: 'Upholstery', title: 'Living Room Suite' },
-  { id: 4, image: 'https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=800&q=80', category: 'Blinds', title: 'Roller Blinds' },
-  { id: 5, image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80', category: 'Upholstery', title: 'Custom Headboard' },
-  { id: 6, image: 'https://images.unsplash.com/photo-1615873968403-89e068629265?w=800&q=80', category: 'Blinds', title: 'Wooden Blinds' },
-  { id: 7, image: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=800&q=80', category: 'Upholstery', title: 'Recliner Restoration' },
-  { id: 8, image: 'https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?w=800&q=80', category: 'Blinds', title: 'Venetian Blinds' },
-  { id: 9, image: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&q=80', category: 'Upholstery', title: 'Dining Chairs Set' },
-  { id: 10, image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80', category: 'Blinds', title: 'Patio Blinds' },
-  { id: 11, image: 'https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?w=800&q=80', category: 'Upholstery', title: 'Leather Repair' },
-  { id: 12, image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80', category: 'Blinds', title: 'Outdoor Blinds' },
+  { id: 1, image: '/images/hands-upholstering-chair.jpg', category: 'Upholstery', title: 'Chair Upholstery' },
+  { id: 2, image: '/images/installing-blinds.jpg', category: 'Blinds', title: 'Blinds Installation' },
+  { id: 3, image: '/images/leather-rolls-thread.jpg', category: 'Upholstery', title: 'Premium Leather Materials' },
+  { id: 4, image: '/images/installing-bracket.jpg', category: 'Blinds', title: 'Bracket Installation' },
+  { id: 5, image: '/images/fixing-chair.jpg', category: 'Upholstery', title: 'Chair Restoration' },
+  { id: 6, image: '/images/hands-screwing-detail.jpg', category: 'Upholstery', title: 'Precision Craftsmanship' },
+  { id: 7, image: '/images/corrugated-texture.jpg', category: 'Upholstery', title: 'Fabric Textures' },
 ];
 
 export default function Gallery() {

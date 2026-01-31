@@ -26,10 +26,15 @@ export default function Blinds() {
       {/* Hero */}
       <section className="services-hero">
         <div className="services-hero__bg">
-          <img
-            src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1920&q=80"
-            alt="Custom blinds"
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/images/installing-blinds.jpg"
+          >
+            <source src="/videos/office-blinds.mp4" type="video/mp4" />
+          </video>
           <div className="services-hero__overlay"></div>
         </div>
         <div className="services-hero__content">
