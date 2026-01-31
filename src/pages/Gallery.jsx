@@ -4,13 +4,24 @@ import { motion, AnimatePresence } from 'motion/react';
 import './Gallery.css';
 
 const galleryItems = [
-  { id: 1, image: '/images/hands-upholstering-chair.jpg', category: 'Upholstery', title: 'Chair Upholstery' },
-  { id: 2, image: '/images/installing-blinds.jpg', category: 'Blinds', title: 'Blinds Installation' },
-  { id: 3, image: '/images/leather-rolls-thread.jpg', category: 'Upholstery', title: 'Premium Leather Materials' },
-  { id: 4, image: '/images/installing-bracket.jpg', category: 'Blinds', title: 'Bracket Installation' },
-  { id: 5, image: '/images/fixing-chair.jpg', category: 'Upholstery', title: 'Chair Restoration' },
-  { id: 6, image: '/images/hands-screwing-detail.jpg', category: 'Upholstery', title: 'Precision Craftsmanship' },
-  { id: 7, image: '/images/corrugated-texture.jpg', category: 'Upholstery', title: 'Fabric Textures' },
+  { id: 1, image: '/images/projects/project-01.jpg', category: 'Upholstery', title: 'Victorian Armchairs - Floral Fabric' },
+  { id: 2, image: '/images/projects/project-06.jpg', category: 'Upholstery', title: 'Wingback Chair - Paisley Pattern' },
+  { id: 3, image: '/images/projects/project-10.jpg', category: 'Upholstery', title: 'Antique Chair - Damask Fabric' },
+  { id: 4, image: '/images/projects/project-15.jpg', category: 'Upholstery', title: 'Two-Seater Sofa - Navy Blue' },
+  { id: 5, image: '/images/projects/project-20.jpg', category: 'Upholstery', title: 'Leather Recliner Sofa' },
+  { id: 6, image: '/images/projects/project-25.jpg', category: 'Upholstery', title: 'Ornate Antique Chair - Black Velvet' },
+  { id: 7, image: '/images/projects/project-30.jpg', category: 'Upholstery', title: 'Wingback Chair - Palm Leaf Pattern' },
+  { id: 8, image: '/images/projects/project-35.jpg', category: 'Upholstery', title: 'Dining Chairs - Mustard Yellow' },
+  { id: 9, image: '/images/projects/project-40.jpg', category: 'Upholstery', title: 'Victorian Chair - Blue Floral' },
+  { id: 10, image: '/images/projects/project-45.jpg', category: 'Upholstery', title: 'Wingback Chair - Grey Button Tufted' },
+  { id: 11, image: '/images/projects/project-02.jpg', category: 'Upholstery', title: 'Antique Chair Restoration' },
+  { id: 12, image: '/images/projects/project-07.jpg', category: 'Upholstery', title: 'Armchair Reupholstery' },
+  { id: 13, image: '/images/projects/project-12.jpg', category: 'Upholstery', title: 'Lounge Chair Makeover' },
+  { id: 14, image: '/images/projects/project-22.jpg', category: 'Upholstery', title: 'Sofa Refurbishment' },
+  { id: 15, image: '/images/projects/project-32.jpg', category: 'Upholstery', title: 'Chair Set Restoration' },
+  { id: 16, image: '/images/projects/project-42.jpg', category: 'Upholstery', title: 'Classic Chair Reupholstery' },
+  { id: 17, image: '/images/installing-blinds.jpg', category: 'Blinds', title: 'Blinds Installation' },
+  { id: 18, image: '/images/installing-bracket.jpg', category: 'Blinds', title: 'Bracket Mounting' },
 ];
 
 export default function Gallery() {

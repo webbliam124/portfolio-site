@@ -10,12 +10,12 @@ const features = [
 ];
 
 const projects = [
-  { id: 1, image: '/images/hands-upholstering-chair.jpg', category: 'Upholstery' },
-  { id: 2, image: '/images/installing-blinds.jpg', category: 'Blinds' },
-  { id: 3, image: '/images/leather-rolls-thread.jpg', category: 'Upholstery' },
-  { id: 4, image: '/images/installing-bracket.jpg', category: 'Blinds' },
-  { id: 5, image: '/images/fixing-chair.jpg', category: 'Upholstery' },
-  { id: 6, image: '/images/hands-screwing-detail.jpg', category: 'Upholstery' },
+  { id: 1, image: '/images/projects/project-01.jpg', category: 'Upholstery' },
+  { id: 2, image: '/images/projects/project-45.jpg', category: 'Upholstery' },
+  { id: 3, image: '/images/projects/project-20.jpg', category: 'Upholstery' },
+  { id: 4, image: '/images/projects/project-35.jpg', category: 'Upholstery' },
+  { id: 5, image: '/images/projects/project-06.jpg', category: 'Upholstery' },
+  { id: 6, image: '/images/projects/project-40.jpg', category: 'Upholstery' },
 ];
 
 export default function Home() {
