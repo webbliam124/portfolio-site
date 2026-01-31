@@ -1,4 +1,4 @@
-const BASE_URL = 'https://aandkblinds.co.za';
+const BASE_URL = 'https://aandk.co.za';
 
 // LocalBusiness schema - used site-wide
 export const localBusinessSchema = {
