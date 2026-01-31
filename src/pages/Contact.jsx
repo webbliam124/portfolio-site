@@ -2,9 +2,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import './Contact.css';
 
-// Get your free access key at https://web3forms.com
-// Enter: sales@aandkblinds.co.za to receive form submissions
-const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE'; // TODO: Replace with real key
+const WEB3FORMS_KEY = 'bb34cb2d-db3f-4b5f-a31d-2a736380d188';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
