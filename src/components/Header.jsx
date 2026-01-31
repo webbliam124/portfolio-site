@@ -56,7 +56,7 @@ export default function Header() {
     <header className={`header ${scrolled ? 'header--scrolled' : ''} ${mobileMenuOpen ? 'header--menu-open' : ''}`}>
       <div className="header__container">
         <Link to="/" className="header__logo">
-          <img src="/logo.png" alt="A&K Upholstery & Blinds" />
+          <img src="/logo.png" alt="A and K Blinds" />
         </Link>
 
         <nav className={`header__nav ${mobileMenuOpen ? 'header__nav--open' : ''}`}>

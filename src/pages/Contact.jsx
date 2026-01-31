@@ -51,7 +51,7 @@ export default function Contact() {
       const data = new FormData();
       data.append('access_key', WEB3FORMS_KEY);
       data.append('subject', `New Enquiry: ${formData.service} - ${formData.name}`);
-      data.append('from_name', 'A&K Website');
+      data.append('from_name', 'A and K Website');
       data.append('replyto', formData.email);
       data.append('name', formData.name);
       data.append('email', formData.email);
@@ -87,8 +87,8 @@ export default function Contact() {
   return (
     <main className="contact-page">
       <SEO
-        title="Contact A&K | Free Quote Krugersdorp"
-        description="Contact A&K Upholstery & Blinds for a free quote. Visit our Krugersdorp showroom, call 011 955 4085, or send us an enquiry. Mon-Fri 08:00-16:00. Walk-ins welcome."
+        title="Contact A and K | Free Quote Krugersdorp"
+        description="Contact A and K Blinds for a free quote. Visit our Krugersdorp showroom, call 011 955 4085, or send us an enquiry. Mon-Fri 08:00-16:00. Walk-ins welcome."
         keywords={[
           'contact a&k blinds',
           'free quote upholstery krugersdorp',
@@ -330,7 +330,7 @@ export default function Contact() {
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="A&K Location"
+          title="A and K Location"
         ></iframe>
       </section>
     </main>

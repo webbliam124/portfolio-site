@@ -30,7 +30,7 @@ export default function Home() {
     <main className="home">
       <SEO
         title="Expert Upholstery & Custom Blinds in Krugersdorp"
-        description="A&K Upholstery & Blinds - Professional furniture reupholstery and custom blinds manufactured in-house. Expert craftsmanship serving all of South Africa from our Krugersdorp workshop. Get a free quote today."
+        description="A and K Blinds - Professional furniture reupholstery and custom blinds manufactured in-house. Expert craftsmanship serving all of South Africa from our Krugersdorp workshop. Get a free quote today."
         keywords={[
           'upholstery krugersdorp',
           'blinds south africa',
@@ -72,7 +72,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            From furniture restoration to bespoke window solutions, A&K delivers quality craftsmanship across South Africa.
+            From furniture restoration to bespoke window solutions, A and K delivers quality craftsmanship across South Africa.
           </motion.p>
           <motion.div
             className="hero__ctas"
@@ -218,7 +218,7 @@ export default function Home() {
           >
             <h2>Craftsmanship You Can Trust</h2>
             <p>
-              Founded by William Webb, A&K Upholstery & Blinds has built a reputation for quality
+              Founded by William Webb, A and K Blinds has built a reputation for quality
               workmanship and excellent service. Our large, skilled team brings years of combined
               experience to every project.
             </p>
@@ -284,7 +284,7 @@ export default function Home() {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="A&K Location"
+              title="A and K Location"
             ></iframe>
           </div>
         </div>

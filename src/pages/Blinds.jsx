@@ -88,7 +88,7 @@ export default function Blinds() {
         <div className="services-intro__container">
           <h2>Quality Blinds Made In-House</h2>
           <p>
-            Unlike many competitors, A&K manufactures blinds right here in our Krugersdorp facility.
+            Unlike many competitors, A and K manufactures blinds right here in our Krugersdorp facility.
             This means better quality control, faster turnaround, and the ability to customise
             exactly to your specifications. We don't just resell imported products – we craft them.
           </p>
@@ -130,10 +130,10 @@ export default function Blinds() {
         </div>
       </section>
 
-      {/* Why Choose A&K */}
+      {/* Why Choose A and K */}
       <section className="why-choose">
         <div className="why-choose__container">
-          <h2>Why Choose A&K Blinds</h2>
+          <h2>Why Choose A and K Blinds</h2>
           <div className="why-choose__grid">
             {whyChoose.map((item, i) => (
               <motion.div

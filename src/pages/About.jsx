@@ -23,8 +23,8 @@ export default function About() {
   return (
     <main className="about-page">
       <SEO
-        title="About A&K | Krugersdorp Upholstery & Blinds Workshop"
-        description="Learn about A&K Upholstery & Blinds - founded by William Webb in Krugersdorp. Meet our skilled team of craftspeople and discover why we're trusted across South Africa for quality upholstery and blinds."
+        title="About A and K | Krugersdorp Upholstery & Blinds Workshop"
+        description="Learn about A and K Blinds - founded by William Webb in Krugersdorp. Meet our skilled team of craftspeople and discover why we're trusted across South Africa for quality upholstery and blinds."
         keywords={[
           'about a&k upholstery',
           'krugersdorp workshop',
@@ -54,9 +54,9 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1>About A&K</h1>
+            <h1>About A and K</h1>
             <p>
-              A&K Upholstery & Blinds was founded by William Webb with a simple vision: to provide
+              A and K Blinds was founded by William Webb with a simple vision: to provide
               South Africans with quality craftsmanship they can trust. Based in Kenmare,
               Krugersdorp, we've built our reputation on skilled workmanship, honest pricing, and
               exceptional customer service.
@@ -65,7 +65,7 @@ export default function About() {
               What makes us different? We do everything in-house. Our upholstery workshop and blinds
               manufacturing facility operate under one roof, giving us complete control over quality
               and turnaround times. We don't outsource, and we don't resell imported products – when
-              you work with A&K, you're getting the real thing.
+              you work with A and K, you're getting the real thing.
             </p>
             <p>
               Our two specialist divisions – upholstery and blinds – complement each other perfectly.
@@ -81,7 +81,7 @@ export default function About() {
           >
             <img
               src="/images/projects/project-01.jpg"
-              alt="A&K Craftsmanship"
+              alt="A and K Craftsmanship"
             />
           </motion.div>
         </div>
@@ -99,7 +99,7 @@ export default function About() {
           >
             <img
               src="/images/team-william.jpg"
-              alt="William Webb and team member at the A&K workshop"
+              alt="William Webb and team member at the A and K workshop"
             />
           </motion.div>
           <motion.div
@@ -111,7 +111,7 @@ export default function About() {
           >
             <h2>Meet the Team Behind the Craft</h2>
             <p>
-              Our strength lies in our people. A&K employs a large team of skilled craftspeople,
+              Our strength lies in our people. A and K employs a large team of skilled craftspeople,
               upholsterers, and blind technicians – each bringing years of experience and a passion
               for their trade.
             </p>

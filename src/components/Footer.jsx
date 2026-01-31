@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="footer__container">
         <div className="footer__grid">
           <div className="footer__col footer__col--about">
-            <img src="/logo-white.png" alt="A&K Upholstery & Blinds" className="footer__logo" />
+            <img src="/logo-white.png" alt="A and K Blinds" className="footer__logo" />
             <p>Expert upholstery services and custom blinds manufactured in-house. Quality craftsmanship you can trust.</p>
             <p className="footer__tagline">Proudly serving South Africa</p>
           </div>
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; {new Date().getFullYear()} A&K Upholstery & Blinds. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} A and K Blinds. All rights reserved.</p>
           <div className="footer__legal">
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms of Service</Link>

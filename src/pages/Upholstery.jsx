@@ -87,7 +87,7 @@ export default function Upholstery() {
         <div className="services-intro__container">
           <h2>Expert Upholstery for All Furniture</h2>
           <p>
-            At A&K, we believe quality furniture deserves a second chance. Our skilled upholsterers
+            At A and K, we believe quality furniture deserves a second chance. Our skilled upholsterers
             handle everything from domestic sofas and recliners to commercial office seating and
             restaurant furniture. Every piece is treated with care and attention to detail.
           </p>

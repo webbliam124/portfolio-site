@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-const SITE_NAME = 'A&K Upholstery & Blinds';
+const SITE_NAME = 'A and K Blinds';
 const BASE_URL = 'https://aandk.co.za';
 const DEFAULT_IMAGE = '/images/leather-rolls-thread.jpg';
 

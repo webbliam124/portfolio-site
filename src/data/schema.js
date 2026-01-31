@@ -5,7 +5,7 @@ export const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   '@id': `${BASE_URL}/#business`,
-  name: 'A&K Upholstery & Blinds',
+  name: 'A and K Blinds',
   description: 'Professional upholstery services and custom blinds manufactured in-house. Serving all of South Africa from our Krugersdorp workshop.',
   url: BASE_URL,
   logo: `${BASE_URL}/logo.png`,
@@ -90,7 +90,7 @@ export function generateServiceSchema(service, type) {
     provider: {
       '@type': 'LocalBusiness',
       '@id': `${BASE_URL}/#business`,
-      name: 'A&K Upholstery & Blinds',
+      name: 'A and K Blinds',
     },
     areaServed: {
       '@type': 'Country',

@@ -120,7 +120,7 @@ export default function ServiceDetail({ type }) {
 
   const relatedServices = services.filter(s => s.id !== serviceId).slice(0, 3);
   const seo = seoContent[serviceId] || {
-    title: `${service.name} | A&K Krugersdorp`,
+    title: `${service.name} | A and K Krugersdorp`,
     description: service.shortDesc,
     keywords: [],
   };

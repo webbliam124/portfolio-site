@@ -43,7 +43,7 @@ export default function Gallery() {
     <main className="gallery-page">
       <SEO
         title="Upholstery & Blinds Portfolio"
-        description="Browse our portfolio of completed upholstery and blinds projects. See examples of furniture reupholstery, sofa restorations, custom blinds installations, and more from A&K Krugersdorp."
+        description="Browse our portfolio of completed upholstery and blinds projects. See examples of furniture reupholstery, sofa restorations, custom blinds installations, and more from A and K Krugersdorp."
         keywords={[
           'upholstery portfolio',
           'furniture restoration examples',
