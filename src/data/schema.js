@@ -14,7 +14,7 @@ export const localBusinessSchema = {
   email: 'sales@aandkblinds.co.za',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '172 Voortrekker Drive, Kenmare',
+    streetAddress: '172 Voortrekker Rd, Kenmare',
     addressLocality: 'Krugersdorp',
     addressRegion: 'Gauteng',
     postalCode: '1739',

@@ -175,7 +175,7 @@ export default function About() {
             <div className="about-showroom__details">
               <div>
                 <h4>Address</h4>
-                <p>172 Voortrekker Drive, Kenmare, Krugersdorp</p>
+                <p>172 Voortrekker Rd, Kenmare, Krugersdorp</p>
               </div>
               <div>
                 <h4>Hours</h4>

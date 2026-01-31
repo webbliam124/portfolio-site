@@ -51,7 +51,7 @@ export default function Footer() {
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                   <circle cx="12" cy="10" r="3"/>
                 </svg>
-                <span>172 Voortrekker Drive, Kenmare, Krugersdorp</span>
+                <span>172 Voortrekker Rd, Kenmare, Krugersdorp</span>
               </li>
               <li>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

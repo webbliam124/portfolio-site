@@ -170,7 +170,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4>Address</h4>
-                  <span>172 Voortrekker Drive, Kenmare, Krugersdorp</span>
+                  <span>172 Voortrekker Rd, Kenmare, Krugersdorp</span>
                 </div>
               </div>
 
@@ -323,7 +323,7 @@ export default function Contact() {
       {/* Map Section */}
       <section className="contact-page__map">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.123456789!2d27.7654321!3d-26.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA3JzI0LjQiUyAyN8KwNDUnNTUuNiJF!5e0!3m2!1sen!2sza!4v1234567890"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.8!2d27.7731!3d-26.1019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9599217184e067%3A0x632129f6fcac1da!2s172%20Voortrekker%20Rd%2C%20Kenmare%2C%20Krugersdorp%2C%201724!5e0!3m2!1sen!2sza"
           width="100%"
           height="400"
           style={{ border: 0 }}
